@@ -5,33 +5,39 @@
   <meta charset="UTF-8">
 </head>
 
-<body style="font-family: Arial; margin:0; background:white; text-align:center;">
+<body style="margin:0; font-family: Arial; background:#f9f9f9;">
 
   <!-- Header -->
-  <div style="background:#2196F3; color:white; padding:20px;">
-    <h1>Sticky Moments Magnets</h1>
-    <p>Turn your favorite moments into lasting memories 💗</p>
+  <div style="background:#2196F3; color:white; padding:25px; text-align:center;">
+    <h1 style="margin:0;">Sticky Moments Magnets</h1>
+    <p style="margin:5px 0;">Turn your favorite moments into lasting memories 💗</p>
   </div>
 
-  <!-- Main Section -->
-  <div style="padding:30px;">
+  <!-- Main -->
+  <div style="max-width:500px; margin:40px auto; background:white; padding:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center;">
 
-    <h2 style="color:#E91E63;">
-      Create your custom photo magnet ✨
-    </h2>
+    <h2 style="color:#E91E63;">Create Your Custom Magnet ✨</h2>
 
-    <p>Upload your favorite photo and make it stick forever!</p>
+    <p style="font-size:16px;">
+      Upload your photo and we will turn it into a beautiful magnet you can keep forever!
+    </p>
+
+    <!-- Product -->
+    <div style="background:#f1f1f1; padding:15px; border-radius:8px; margin:20px 0;">
+      <strong>Product:</strong><br>
+      Square Magnet 5 × 5 cm
+    </div>
 
     <!-- Upload -->
-    <input type="file"><br><br>
+    <input type="file" style="margin:15px 0;"><br>
 
-    <!-- Order -->
-    <label>Choose quantity:</label><br>
-    <input type="number" min="1"><br><br>
+    <!-- Quantity -->
+    <label>Quantity:</label><br>
+    <input type="number" min="1" value="1" style="padding:8px; width:80px; margin:10px 0;"><br>
 
     <!-- Payment -->
     <label>Payment method:</label><br>
-    <select>
+    <select style="padding:10px; width:100%; margin-top:10px;">
       <option>Pay Online (iDEAL)</option>
       <option>Cash on Delivery</option>
     </select><br><br>
@@ -40,20 +46,21 @@
     <button style="
       background:#E91E63;
       color:white;
-      padding:12px 25px;
+      padding:15px;
+      width:100%;
       border:none;
-      border-radius:8px;
+      border-radius:10px;
       font-size:16px;
       cursor:pointer;
-    ">
+    " onclick="alert('Thank you! Your order has been received.')">
       Submit Order
     </button>
 
   </div>
 
   <!-- Footer -->
-  <div style="background:#2196F3; color:white; padding:15px;">
-    <p>Sticky Moments Magnets © 2026</p>
+  <div style="text-align:center; padding:20px; color:#777;">
+    © 2026 Sticky Moments Magnets
   </div>
 
 </body>
