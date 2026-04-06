@@ -3,203 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stickymoments Magnets</title>
+  <title>Sticky Moments Magnets</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #fefefe;
       margin: 0;
-      background-color: #fff;
+      padding: 0;
       color: #333;
     }
     header {
-      background: #2196F3; /* Blue */
-      color: #fff;
+      background: #00aaff;
+      color: white;
       padding: 20px;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2rem;
     }
-    nav {
-      text-align: center;
-      margin: 10px 0;
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
     }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
     }
     section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2em;
-      color: #FF4081; /* Pink */
-    }
-    .hero p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      justify-items: center;
+      margin-bottom: 30px;
     }
     .gallery img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+    input[type="file"] {
+      margin: 10px 0;
     }
-    form {
-      max-width: 500px;
-      margin: auto;
-      text-align: left;
-    }
-    form input, form select, form textarea {
-      width: 100%;
+    select, button {
       padding: 10px;
-      margin: 8px 0;
+      margin-top: 10px;
+      font-size: 1rem;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    form button {
-      background-color: #FF4081; /* Pink */
-      color: #fff;
-      padding: 12px 20px;
+    button {
+      background-color: #00aaff;
+      color: white;
       border: none;
-      border-radius: 5px;
       cursor: pointer;
-      font-size: 1em;
     }
-    form button:hover {
-      background-color: #E91E63;
-    }
-    footer {
-      background-color: #2196F3;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
+    button:hover {
+      background-color: #0088cc;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Sticky Moments Magnets</h1>
+    <p>Turn your favorite moments and memories into magnets!</p>
+  </header>
 
-<header>
-  <h1>Stickymoments Magnets</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#order">Order</a>
-    <a href="#about">About Us</a>
-  </nav>
-</header>
+  <main>
+    <!-- Photo Upload Section -->
+    <section>
+      <h2>Upload Your Photo</h2>
+      <input type="file" id="photoUpload" accept="image/*"><br>
+      <img id="preview" src="" alt="" style="display:none; width:200px; margin-top:10px;">
+    </section>
 
-<section id="home" class="hero">
-  <h2>Turn your favorite moments into lasting memories!</h2>
-  <p>Create custom photo magnets that brighten your fridge, office, or make a perfect gift. Every smile, every memory — now in a magnet!</p>
-  <p><em>Upload your photo, choose your magnet style, and make your memories stick!</em></p>
-  <button onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Order Now</button>
-</section>
+    <!-- Magnet Type -->
+    <section>
+      <h2>Choose Magnet Type</h2>
+      <select id="magnetType">
+        <option value="white">White</option>
+        <option value="blue">Blue</option>
+        <option value="pink">Pink</option>
+      </select>
+    </section>
 
-<section id="gallery">
-  <h2>Our Magnets</h2>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/150?text=Magnet+1" alt="Magnet 1">
-    <img src="https://via.placeholder.com/150?text=Magnet+2" alt="Magnet 2">
-    <img src="https://via.placeholder.com/150?text=Magnet+3" alt="Magnet 3">
-    <img src="https://via.placeholder.com/150?text=Magnet+4" alt="Magnet 4">
-  </div>
-</section>
+    <!-- Payment Option -->
+    <section>
+      <h2>Payment</h2>
+      <select id="paymentOption">
+        <option value="ideal">Pay Online (iDEAL)</option>
+        <option value="cash">Cash on Delivery</option>
+      </select><br>
+      <button id="payButton">Submit Order</button>
+    </section>
 
-<section id="order">
-  <h2>Place Your Order</h2>
-  <form id="orderForm" enctype="multipart/form-data">
-    <label>Name:</label>
-    <input type="text" name="name" required>
+    <!-- Gallery -->
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="placeholder1.jpg" alt="Magnet 1">
+        <img src="placeholder2.jpg" alt="Magnet 2">
+        <img src="placeholder3.jpg" alt="Magnet 3">
+      </div>
+    </section>
+  </main>
 
-    <label>Email:</label>
-    <input type="email" name="email" required>
-
-    <label>Phone:</label>
-    <input type="tel" name="phone" required>
-
-    <label>Magnet Type:</label>
-    <select name="type" required>
-      <option value="classic">Classic</option>
-      <option value="photo">Photo Magnet</option>
-      <option value="custom">Custom Shape</option>
-    </select>
-
-    <label>Quantity:</label>
-    <input type="number" name="quantity" min="1" required>
-
-    <label>Upload Photo:</label>
-    <input type="file" name="photo" id="photoUpload" accept="image/*">
-    <div id="preview" style="margin-top:10px;"></div>
-
-    <label>Payment Option:</label>
-    <select id="paymentOption" name="payment" required>
-      <option value="online">Pay Online (iDEAL)</option>
-      <option value="cash">Cash on Delivery</option>
-    </select>
-
-    <button type="submit">Submit Order</button>
-  </form>
-</section>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>Stickymoments Magnets started with the idea that memories should be colorful and fun. We create custom photo magnets that bring smiles to your home or office!</p>
-</section>
-
-<footer>
-  <p>Contact: info@stickymomentsmagnets.com | Follow us on social media!</p>
-  <p>&copy; 2026 Stickymoments Magnets</p>
-</footer>
-
-<script>
-  // Preview uploaded photo
-  const photoUpload = document.getElementById('photoUpload');
-  const preview = document.getElementById('preview');
-  photoUpload.addEventListener('change', function() {
-    preview.innerHTML = '';
-    const file = this.files[0];
-    if(file) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.style.maxWidth = '200px';
-        img.style.borderRadius = '10px';
-        preview.appendChild(img);
+  <script>
+    // Photo preview
+    const photoUpload = document.getElementById('photoUpload');
+    const preview = document.getElementById('preview');
+    photoUpload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = 'block';
       }
-      reader.readAsDataURL(file);
-    }
-  });
+    });
 
-  // Form submission
-  document.getElementById('orderForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const payment = document.getElementById('paymentOption').value;
+    // Payment
+    const payButton = document.getElementById('payButton');
+    const paymentOption = document.getElementById('paymentOption');
 
-    if(payment === 'online'){
-      // Replace this URL with your real iDEAL payment link
-      const idealPaymentLink = 'https://pay.mollie.com/payscreen/your-unique-link';
-      window.location.href = idealPaymentLink;
-    } else {
-      alert('Thank you! Your order has been submitted. We will contact you soon.');
-    }
-  });
-</script>
+    // Replace with your actual iDEAL payment link
+    const idealPaymentLink = 'https://pay.mollie.com/payscreen/your-unique-link';
 
+    payButton.addEventListener('click', () => {
+      if (paymentOption.value === 'ideal') {
+        window.open(idealPaymentLink, '_blank');
+      } else {
+        alert('Your order has been received! Please pay cash on delivery.');
+      }
+    });
+  </script>
 </body>
 </html>
